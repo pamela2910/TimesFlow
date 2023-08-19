@@ -1,0 +1,43 @@
+package br.com.login.controller;
+
+import br.com.login.DAO.Conexao;
+import br.com.login.DAO.LoginDAO;
+import br.com.login.view.CadastroView;
+import br.com.login.view.LoginView;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.io.IOException;
+
+public class LoginController {
+    public void cadastroUsuario(CadastroView view) throws SQLException, IOException {
+        Connection conexao = null;
+        try {
+            conexao = new Conexao().getConnection();
+            LoginDAO cadastro = new LoginDAO();
+            cadastro.cadastrarUsuario(view.getjTextFieldNome().getText(),
+                                      view.getjTextFieldEmail().getText(),
+                                      view.getjPasswordFieldSenha().getText());
+        } catch (SQLException e) {
+            
+        } finally {
+            if (conexao != null) {
+                conexao.close();
+            }
+        }
+    }
+    
+    public void loginUsuario(LoginView view) throws SQLException, IOException {
+        Connection conexao = null;
+        try {
+            conexao = new Conexao().getConnection();
+            LoginDAO login = new LoginDAO();
+            login.login(view.getjTextFieldLogin().getText(),
+                                      view.getjPasswordFieldSenha().getText());
+        } catch (SQLException e) {
+            
+        } finally {
+            if (conexao != null) {
+                conexao.close();
+            }
+       }
+}
