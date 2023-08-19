@@ -1,0 +1,9 @@
+CREATE TABLE login(
+	nome varchar(50),
+	email varchar(50),
+	senha varchar(50)
+)
+
+SELECT * FROM login
+
+INSERT INTO login (nome, email, senha) VALUES ();
