@@ -1,8 +1,8 @@
 package br.com.login.model;
-public class Login {
+public class Usuario {
     private String nome, email, senha;
 
-    public Login(String email, String senha) {
+    public Usuario(String email, String senha) {
         this.email = email;
         this.senha = senha;
     }
