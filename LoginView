@@ -1,0 +1,127 @@
+package br.com.timesflow.view;
+
+import br.com.timesflow.controller.LoginController;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class LoginView extends javax.swing.JFrame {
+
+    public LoginView() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jTextFieldLogin = new javax.swing.JTextField();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
+        jButtonEntrar = new javax.swing.JButton();
+        jButtonRealizarCadastro = new javax.swing.JButton();
+        jButtonEsqueceuSenha = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextFieldLogin.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
+        getContentPane().add(jTextFieldLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 350, 50));
+
+        jPasswordFieldSenha.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
+        jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, 350, 50));
+
+        jButtonEntrar.setContentAreaFilled(false);
+        jButtonEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 440, 200, 70));
+
+        jButtonRealizarCadastro.setContentAreaFilled(false);
+        jButtonRealizarCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonRealizarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRealizarCadastroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRealizarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 550, 190, 40));
+
+        jButtonEsqueceuSenha.setContentAreaFilled(false);
+        jButtonEsqueceuSenha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonEsqueceuSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 620, 210, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/TelaLogin.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 680));
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+                                      
+    private void jButtonRealizarCadastroActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        CadastroView telaDeCadastro = new CadastroView();
+        telaDeCadastro.setVisible(true);
+    }                                                       
+
+    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        if (jTextFieldLogin.getText().matches("") || jPasswordFieldSenha.getText().matches("")){
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
+        } else {
+        try {
+            LoginController login = new LoginController();
+            String mensagem = login.loginUsuario(this);
+            
+            if (mensagem.equals("login feito com sucesso")) {
+                JOptionPane.showMessageDialog(rootPane, mensagem);
+                InicioView telaDeInicio = new InicioView();
+                telaDeInicio.setVisible(true);
+                this.dispose();
+            } else {
+            }
+            
+        } catch (Exception ex) {
+           }
+        }
+    }                                             
+
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public void setjPasswordFieldSenha(JPasswordField jPasswordFieldSenha) {
+        this.jPasswordFieldSenha = jPasswordFieldSenha;
+    }
+
+    public JTextField getjTextFieldLogin() {
+        return jTextFieldLogin;
+    }
+
+    public void setjTextFieldLogin(JTextField jTextFieldLogin) {
+        this.jTextFieldLogin = jTextFieldLogin;
+    }
+
+    public static void main(String args[]) {
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LoginView().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton jButtonEntrar;
+    private javax.swing.JButton jButtonEsqueceuSenha;
+    private javax.swing.JButton jButtonRealizarCadastro;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JTextField jTextFieldLogin;
+    // End of variables declaration                   
+}
