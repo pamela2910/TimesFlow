@@ -1,0 +1,36 @@
+package br.com.timesflow.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+public class LoginDAO {
+    public void cadastrarUsuario(String nome, String email, String senha) throws SQLException{
+        Connection conexao = new Conexao().getConnection();
+        String sql = "INSERT INTO usuario (nome, email, senha) VALUES ('"+nome+"', '"+email+"', '"+senha+"')";
+        System.out.println(sql);
+        PreparedStatement statment = conexao.prepareStatement(sql);
+        statment.execute();
+        conexao.close();
+    }
+    
+    public String loginUsuario(String email, String senha) throws SQLException{
+        Connection conexao = new Conexao().getConnection();
+        String sql = "SELECT email, senha FROM usuario WHERE email = ? AND senha = ?";
+        System.out.println(sql);
+        PreparedStatement statment = conexao.prepareStatement(sql);
+        statment.setString(1, email);
+        statment.setString(2, senha);
+        ResultSet rs = statment.executeQuery();
+        
+        boolean possuiUsuario = rs.next();
+        conexao.close();
+        
+        if (possuiUsuario) {
+            return "Login feito com sucesso";
+        } else {
+            return "Dados incorretos";
+        }
+    }
+}
