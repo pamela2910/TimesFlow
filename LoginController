@@ -1,0 +1,21 @@
+package br.com.timesflow.controller;
+
+import br.com.timesflow.dao.Conexao;
+import br.com.timesflow.dao.LoginDAO;
+import br.com.timesflow.view.CadastroView;
+import br.com.timesflow.view.LoginView;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class LoginController {
+    public void cadastroUsuario(CadastroView view) throws SQLException{
+        Connection conexao = new Conexao().getConnection();
+        LoginDAO cadastro = new LoginDAO();
+        cadastro.cadastrarUsuario(view.getjTextFieldNome().getText(), view.getjTextFieldEmail().getText(), view.getjPasswordFieldSenha().getText());
+    }
+    public String loginUsuario(LoginView view) throws SQLException {
+        Connection conexao = new Conexao().getConnection();
+        LoginDAO login = new LoginDAO();
+        return login.loginUsuario(view.getjTextFieldLogin().getText(), view.getjPasswordFieldSenha().getText());
+    }
+ }
