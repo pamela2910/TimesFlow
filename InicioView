@@ -1,0 +1,143 @@
+package br.com.timesflow.view;
+public class InicioView extends javax.swing.JFrame {
+
+    public InicioView() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jButtonTarefas = new javax.swing.JButton();
+        jButtonCronogramas = new javax.swing.JButton();
+        jButtonNotas = new javax.swing.JButton();
+        jButtonCalendário = new javax.swing.JButton();
+        jButtonDisciplinas = new javax.swing.JButton();
+        jButtonCriarCronograma = new javax.swing.JButton();
+        jButtonMenu = new javax.swing.JButton();
+        jButtonConfigurações = new javax.swing.JButton();
+        jButtonPerfil = new javax.swing.JButton();
+        jButtonMétodoPomodoro = new javax.swing.JButton();
+        jButtonResumo = new javax.swing.JButton();
+        jButtonMapaMental = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Inicio");
+        setPreferredSize(new java.awt.Dimension(1366, 768));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonTarefas.setContentAreaFilled(false);
+        jButtonTarefas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonTarefas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTarefasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonTarefas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 150, 40));
+
+        jButtonCronogramas.setContentAreaFilled(false);
+        jButtonCronogramas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCronogramas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCronogramasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCronogramas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 250, 40));
+
+        jButtonNotas.setContentAreaFilled(false);
+        jButtonNotas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 110, 50));
+
+        jButtonCalendário.setContentAreaFilled(false);
+        jButtonCalendário.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonCalendário, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 210, 50));
+
+        jButtonDisciplinas.setContentAreaFilled(false);
+        jButtonDisciplinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonDisciplinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 220, 60));
+
+        jButtonCriarCronograma.setContentAreaFilled(false);
+        jButtonCriarCronograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCriarCronograma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCriarCronogramaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCriarCronograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 270, 130));
+
+        jButtonMenu.setContentAreaFilled(false);
+        jButtonMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 140, 50));
+
+        jButtonConfigurações.setContentAreaFilled(false);
+        jButtonConfigurações.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonConfigurações, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 260, 50));
+
+        jButtonPerfil.setContentAreaFilled(false);
+        jButtonPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, 210, 90));
+
+        jButtonMétodoPomodoro.setContentAreaFilled(false);
+        jButtonMétodoPomodoro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonMétodoPomodoro, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 330, 230, 80));
+
+        jButtonResumo.setContentAreaFilled(false);
+        jButtonResumo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonResumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 430, 230, 80));
+
+        jButtonMapaMental.setContentAreaFilled(false);
+        jButtonMapaMental.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonMapaMental, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 520, 230, 80));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/TelaInicio.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1370, 770));
+
+        getAccessibleContext().setAccessibleDescription("");
+        getAccessibleContext().setAccessibleParent(jLabel1);
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+
+    private void jButtonTarefasActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        TarefaView telaDeTarefa = new TarefaView();
+        telaDeTarefa.setVisible(true);
+    }                                              
+
+    private void jButtonCronogramasActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        CronogramaView telaDeCronograma = new CronogramaView();
+        telaDeCronograma.setVisible(true);
+    }                                                  
+
+    private void jButtonCriarCronogramaActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        CronogramaView telaDeCronograma = new CronogramaView();
+        telaDeCronograma.setVisible(true);
+    }                                                      
+
+    public static void main(String args[]) {
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new InicioView().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton jButtonCalendário;
+    private javax.swing.JButton jButtonConfigurações;
+    private javax.swing.JButton jButtonCriarCronograma;
+    private javax.swing.JButton jButtonCronogramas;
+    private javax.swing.JButton jButtonDisciplinas;
+    private javax.swing.JButton jButtonMapaMental;
+    private javax.swing.JButton jButtonMenu;
+    private javax.swing.JButton jButtonMétodoPomodoro;
+    private javax.swing.JButton jButtonNotas;
+    private javax.swing.JButton jButtonPerfil;
+    private javax.swing.JButton jButtonResumo;
+    private javax.swing.JButton jButtonTarefas;
+    private javax.swing.JLabel jLabel1;
+    // End of variables declaration                   
+}
